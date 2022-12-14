@@ -1,1 +1,128 @@
 /*Maak hier jouw CSS!*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,900;1,100;1,200;1,300;1,700;1,900&display=swap');
+
+/* -- Global styles - Variables -- */
+:root {
+
+--ff-fontfamily: 'Poppins', sans-serif;
+--ff-fontweight-thin: 100;
+--ff-fontweight-exLight: 200;
+--ff-fontweight-light: 300;
+--ff-fontweight-medium: 500;
+--ff-fontweight-bold: 700;
+--ff-fontweight-black: 900;
+
+--ff-fontsize-h1: calc(1rem + 10vw);
+--ff-fontsize-h2: 2rem;
+--ff-fontsize-p: 0.75rem;
+
+}
+
+/* -- CSS RESET -- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+margin: 0px;
+padding: 0px;
+}
+
+body {
+line-height: 1.5;
+font-family: var(--ff-fontfamily);
+font-weight: var(--ff-fontweight-light);
+-webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+body {
+  background-color: wheat;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  font-weight: var(--ff-fontweight-light);
+  background-color: #5B052B;
+  padding: 20px;
+}
+
+.item-a {
+  grid-area: a;
+}
+
+.item-b {
+  grid-area: b;
+  padding: 50px;
+}
+
+.item-c {
+  grid-area: c;
+  background-color:darkslateblue;
+}
+
+.item-d {
+  grid-area: d;
+}
+
+.item-e {
+  grid-area: e;
+}
+
+.item-f {
+  grid-area: f;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto repeat(5, 50px);
+  grid-gap: 16px;
+  grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "."
+    "f"    
+    ;
+}
+
+
+
+@media screen and (min-width:576px) {
+
+  .wrapper {
+    max-width: 1200px;
+    width: 960;
+    margin: 50px auto;
+  }
+  
+.container {
+  grid-template-columns: 50vw repeat(2, 1fr);
+  grid-template-rows: 50px 190px 100px auto 50px ;
+  grid-template-areas: 
+    "a c c"
+    "b c c"
+    "b e d"
+    "b e ."
+    "f f f";
+}
+
+}
